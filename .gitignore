@@ -8,6 +8,9 @@
 /build
 /dist
 /tags
+/.buildpath
+/.project
+/.settings
 
 # OS generated files #
 ######################
