@@ -1,38 +1,46 @@
 <div class="users view">
-<h2>User</h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>>Id</dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>>Name</dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['name']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>>Username</dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['username']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>>Email</dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $user['User']['email']; ?>
-			&nbsp;
-		</dd>
-	</dl><br />
-	<table>
-		<tr class="actions">
-			<td><?php echo $this->Html->link('Back', array('controller' => 'users', 'action' => 'index')); ?></td>
-		</tr>
-	</table>
+	
+	<div class= "row">
+		<div class="col-lg-1">
+		</div>
+		<div class="col-lg-8">
+			<h2>Members Information and Posts Data</h2>
+			<dl>
+				<dt><?php echo __('Name'); ?></dt>
+				<dd><?php echo h($user['User']['name']); ?> &nbsp;</dd>
+				
+				<dt><?php echo __('Username'); ?></dt>
+				<dd><?php echo h($user['User']['username']); ?>&nbsp;</dd>
+				
+				<dt><?php echo __('Email'); ?></dt>
+				<dd><?php echo h($user['User']['email']); ?>&nbsp;</dd>
+				
+				<dt><?php echo __('# of Posts '); ?></dt>
+				<dd><?php echo __(count($user['Post'])); ?></dd>
+				
+				<dt><?php echo __('Posts Titles'); ?></dt>
+				<dd ><?php for ($x= 0; $x< count($user['Post']); $x++){
+						echo $this->Html->link(($user['Post'][$x]['title']),
+						array('controller'=> 'Posts','action' => 'view', $user['Post'][$x]['id']));
+						echo __("<br />");
+						echo __('Created '.h($user['Post'][$x]['created']));
+						
+						echo __("</br><br />" );
+					}
+					?>
+				</dd>
+			</dl><br />
+			<table>				
+				<tr>
+					<td class ="btn btn-info">
+						<?php echo $this->Html->link('Back', array('controller' => 'posts', 'action' => 'index')); ?>
+					</td>
+				</tr>
+			</table>		
+		</div>
+		<div class="col-lg-3">
+		</div>
+		<div class="pull-right"><?php //echo $this->element('pagination'); ?></div>
+	</div>
 </div>
-<div class="actions">
-	<h3>Actions</h3>
-	<ul>
-		<li><?php echo $this->Html->link('Members', array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link('New User', array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link('Blog Posts', array('controller'=>'posts', 'actions'=>'view')); ?></li>
-	</ul>
-</div>
+

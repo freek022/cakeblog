@@ -1,8 +1,8 @@
 <?php
 class UsersController extends AppController {
-
-    // app/Controller/UsersController.php
-
+	//
+	public $components = array('Paginator');
+	//
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow users to register and logout.
@@ -14,7 +14,7 @@ class UsersController extends AppController {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirect());
 			}
-			$this->Session->setFlash(__('Invalid username or password, try again'));
+			$this->Session->setFlash(__('Invalid Username or Password, Please, try again'));
 		}
 	}
 
@@ -22,12 +22,15 @@ class UsersController extends AppController {
 		return $this->redirect($this->Auth->logout());
 	}
 	
-
+	
     public function index() {
+		//
+		$this->Paginator->settings['contain'] = array('Topic', 'Post'=>array('User','Topic'));
+        $this->set('forums', $this->Paginator->paginate());
+		//
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
     }
-
     public function view($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
@@ -35,7 +38,6 @@ class UsersController extends AppController {
         }
         $this->set('user', $this->User->read(null, $id));
     }
-
     public function add() {
         if ($this->request->is('post')) {
             $this->User->create();
@@ -46,9 +48,8 @@ class UsersController extends AppController {
             $this->Session->setFlash(
                 __('The user could not be saved. Please, try again.')
             );
-        }
+		}
     }
-
     public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
@@ -67,7 +68,6 @@ class UsersController extends AppController {
             unset($this->request->data['User']['password']);
         }
     }
-
     public function delete($id = null) {
         $this->request->onlyAllow('post');
 
@@ -82,7 +82,24 @@ class UsersController extends AppController {
         $this->Session->setFlash(__('User was not deleted'));
         return $this->redirect(array('action' => 'index'));
     }
-
+	public function isAuthorized($user){
+		if ($user['role'] === 'admin') {
+	        return true;
+	    }
+	
+		if(in_array($this->action, array('add'))){
+			return true;
+		}
+		if(in_array($this-> action, array('edit','delete'))){
+			$userId = $this->request->params['pass'][0];
+			if($this->Auth->user('id')===$userId){
+				return true;
+			}
+			
+		}
+		return parent::isAuthorized($user);
+		
+	}	
 }
 
 ?>
