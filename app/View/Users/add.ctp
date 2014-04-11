@@ -8,7 +8,7 @@
             <?php echo $this->Form->create('User',array('class'=>'form-horizontal','inputDefaults'=>array('label'=>false)));?>
 			
             <div class="form-group">
-				<legend><?php echo __('Please fill out all the registration form fields'); ?></legend>
+				<legend><?php echo __('Please fill out all the registration form'); ?></legend>
                 <label for="inputName" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
                     <?php echo $this->Form->input('name',array('class'=>'form-control'));?>
@@ -47,22 +47,5 @@
             <?php echo $this->Form->end();?>
         </div>
     </div>
-
 </div>
 </div>
-<!--
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
-    <fieldset>
-        <legend><?php echo __('Add User'); ?></legend>
-        <?php 
-			echo $this->Form->input('name');
-			echo $this->Form->input('email');
-			echo $this->Form->input('username');
-			echo $this->Form->input('password');
-			echo $this->Form->input('role', array( 'options' => array('admin' => 'Admin', 'author' => 'Author')));
-		?>
-    </fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
--->

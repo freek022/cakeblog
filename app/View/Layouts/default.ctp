@@ -7,8 +7,7 @@
     </title>
     <?php
         echo $this->Html->meta('icon');
- 
-        echo $this->Html->css('bootstrap.min.css');
+		echo $this->Html->css('bootstrap.min.css');
 		echo $this->Html->css('custom.css');
  
         echo $this->fetch('meta');
@@ -17,35 +16,27 @@
     ?>
          <style>
         body {
-          padding-top: 70px;
+          padding-top: 50px;
         }
     </style>
 </head>
 <body>
-      
     <?php echo $this->element('navigation');?>
-   
-    <div class="container">
 	
-      <?php echo $this->Session->flash(); ?>
- 
-      <?php echo $this->fetch('content'); ?>
+    <div class="container body">
+		<strong><?php echo $this->Session->flash(); ?></strong>
+	<?php echo $this->fetch('content'); ?>
        
       <hr>
-      <!--<footer>
-		
-        <p>Maintained by Fred</a></p>
-      </footer>-->
-       
-    </div> <!-- /container -->
-     
-    
+             
+    </div> <!-- /container -->    
      
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <?php echo $this->Html->script('bootstrap.min.js'); ?>
-	<?php echo $this->element('foot');?> 
+	<?php echo $this->element('footer');?> 
+		
 </body>
 </html>

@@ -1,10 +1,11 @@
 <!-- File: /app/View/Users/index.ctp -->
 <div class ="users index">
-	<h1>Members List</h1>	
+	
 	<div class="row">
-        <div class="col-lg-12 ">
-			<table class="table table-striped">
-				<thead>
+		<div class="col-lg-2"></div>
+        <div class="col-lg-8">
+			<table class="table">
+				<thead><h1>Members List</h1>	
 					<tr>
 						<th>Id</th>
 						<th>Name</th>
@@ -16,7 +17,7 @@
 				<tbody>
 					<!-- Here's where we loop through our $posts array, printing out post info -->
 					<?php foreach ($users as $user): ?>
-						<tr>
+						<tr class="success">
 							<td><?php echo ('<h5>'.$user['User']['id'].'</h5>');?></td>
 							<td><?php echo $user['User']['name']; ?></td>
 							<td><?php echo $user['User']['username']; ?></td>
@@ -32,9 +33,8 @@
 				</tbody>
 			</table>
 		</div>	
-		<div class="pull-right">
-                <?php //echo $this->element('paginator'); ?>
-		</div>
+		<div class="col-lg-2"></div>
+		
 	</div>
 </div>
 

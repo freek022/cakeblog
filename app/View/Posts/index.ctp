@@ -1,10 +1,11 @@
 <!-- File: /app/View/Posts/index.ctp -->
 <div class ="posts index">
-	<h1>Blog Posts</h1>	
+		
 	<div class="row">
-        <div class="col-lg-12 ">
-			<table class="table table-striped">
-				<thead>
+		<div class="col-lg-2"></div>
+        <div class="col-lg-8 ">
+			<table class="table">
+				<thead><h1>Blog Posts</h1>
 					<tr>
 						<th>ID</th>
 						<th>Title</th>
@@ -14,7 +15,7 @@
 				</thead>
 				<tbody>
 				<?php foreach ($posts as $post): ?>
-					<tr>
+					<tr class ="success">
 						<td><?php echo ('<h5>'.$post['Post']['id'].'</h5>');?></td>
 						<td><?php echo $this->Html->link( $post['Post']['title'], array('action' => 'view', 
 							$post['Post']['id'])); ?>
@@ -30,9 +31,7 @@
 				</tbody>
 			</table>
 		</div>	
-		<div class="pull-right">
-             <?php //echo $this->element('paginator'); ?>
-		</div>
+		<div class="col-lg-2"></div>
 	</div>
 </div>
 

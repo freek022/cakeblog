@@ -1,10 +1,11 @@
 <!-- File: /app/View/Posts/view.ctp -->
+
 <div class= "row">
-	<div class="col-lg-1">
+	<div class="col-lg-2">
 	</div>
 	<div class="col-lg-8">	
-		<table>
-			<tr>
+		<table class="table"><br /><br />
+			<tr class="active">
 				<td>
 					<h1><?php echo h($post['Post']['title']); ?></h1>
 
@@ -13,6 +14,8 @@
 					<p><?php echo h($post['Post']['body']); ?></p>
 				</td>
 			</tr>
+		</table>
+		<table class="table">	
 			<tr>
 				<td class ="btn btn-info">
 					<?php echo $this->Html->link('Back', array('controller' => 'posts', 'action' => 'index')); ?>
@@ -21,7 +24,7 @@
 		</table>
 	
 	</div>
-	<div class="col-lg-3">
+	<div class="col-lg-2">
 	</div>
 </div>
 
