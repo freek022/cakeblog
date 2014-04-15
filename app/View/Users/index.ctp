@@ -17,7 +17,7 @@
 				<tbody>
 					<!-- Here's where we loop through our $posts array, printing out post info -->
 					<?php foreach ($users as $user): ?>
-						<tr class="success">
+						<tr class="active">
 							<td><?php echo ('<h5>'.$user['User']['id'].'</h5>');?></td>
 							<td><?php echo $user['User']['name']; ?></td>
 							<td><?php echo $user['User']['username']; ?></td>

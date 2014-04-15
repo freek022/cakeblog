@@ -31,7 +31,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 2);
+	Configure::write('debug', 0);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
@@ -227,7 +227,7 @@
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '100284503098506637449177615178');
+	Configure::write('Security.cipherSeed', '10028450309850663744917761517');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

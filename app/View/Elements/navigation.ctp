@@ -20,8 +20,7 @@
                 <ul class="dropdown-menu">
 					<li><?php echo $this->Html->link('View All Members',array('controller' => 'users', 'action' => 'index')); ?></li>
                     <li><?php echo $this->Html->link('Register',array('controller' => 'users', 'action' => 'add')); ?></li>
-				</ul>	
-			
+				</ul>			
 		 </li>
 	  </ul>
 	  <ul class = "nav pull-right">
@@ -57,5 +56,4 @@
       </ul>
    </div>
    </div>
-
 </div>

@@ -15,7 +15,7 @@
 				</thead>
 				<tbody>
 				<?php foreach ($posts as $post): ?>
-					<tr class ="success">
+					<tr class ="active">
 						<td><?php echo ('<h5>'.$post['Post']['id'].'</h5>');?></td>
 						<td><?php echo $this->Html->link( $post['Post']['title'], array('action' => 'view', 
 							$post['Post']['id'])); ?>

@@ -6,6 +6,13 @@
 /composer.lock
 /phpunit.xml
 /vendor
+src/
+plugins/
+tests/
+vendors/
+lib/Cake/Console/Templates/skel/tmp
+nbproject/
+phpunit.xml.dist
 
 # OS generated files #
 ######################
@@ -17,3 +24,12 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+.buildpath
+.gitattributes
+.project
+.settings/
+LICENSE.txt
+version.txt
+app/tmp
+
+
