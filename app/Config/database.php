@@ -61,7 +61,7 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
+/* 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
@@ -69,17 +69,19 @@ class DATABASE_CONFIG {
 		'password' => '',
 		'database' => 'cakeblog',
 		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
+		'encoding' => 'utf8',
+	) */;
 
-	public $test = array(
+	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'test_database_name',
+		'host' => 'eu-cdbr-azure-north-c.cloudapp.net',
+		'login' => 'bb0c4eea106ca0',
+		'password' => '4aaee10c',
+		'database' => 'fgcakePAZzQTA2Rf',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
+	
+	
 }
