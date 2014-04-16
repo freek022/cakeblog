@@ -114,7 +114,7 @@ p.error,
 	background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
 	background-image: -ms-linear-gradient(top, #ee5f5b, #c43c35);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#A57271), to(#c43c35));
-	background-image: -webkit-linear-gradient(top, ##83B7B9, #c43c35);
+	background-image: -webkit-linear-gradient(top, #83B7B9, #c43c35);
 	background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
 	background-image: linear-gradient(top, #ee5f5b, #c43c35);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
